@@ -5,9 +5,9 @@ replicaCount: 1
 fullnameOverride: drug-catalog-service
 
 image:
-  repository: 267923960723.dkr.ecr.ap-south-1.amazonaws.com/catalog-service
-  tag: v1.0.0
-  pullPolicy: Always
+  repository: '267923960723.dkr.ecr.ap-south-1.amazonaws.com/catalog-service'
+  tag: "v1.0.0"
+  pullPolicy: "Always"
 
 service:
   type: ClusterIP

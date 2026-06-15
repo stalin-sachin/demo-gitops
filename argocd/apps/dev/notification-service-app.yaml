@@ -8,17 +8,17 @@ metadata:
     app: notification-service
     managed-by: terraform
   finalizers:
-    - resources-finalizer.argocd.argoproj.io
+  - resources-finalizer.argocd.argoproj.io
 spec:
   project: pharma
 
   source:
-    repoURL: https://github.com/<YOUR_GITHUB_USERNAME>/pharmops-gitops.git
+    repoURL: https://github.com/stalin-sachin/demo-gitops.git
     targetRevision: HEAD
     path: helm-charts
     helm:
       valueFiles:
-        - ../envs/dev/values-notification-service.yaml
+      - ../envs/dev/values-notification-service.yaml
 
   destination:
     server: https://kubernetes.default.svc
@@ -30,9 +30,9 @@ spec:
       selfHeal: true
       allowEmpty: false
     syncOptions:
-      - CreateNamespace=true
-      - PrunePropagationPolicy=foreground
-      - PruneLast=true
+    - CreateNamespace=true
+    - PrunePropagationPolicy=foreground
+    - PruneLast=true
     retry:
       limit: 5
       backoff:
