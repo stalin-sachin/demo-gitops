@@ -11,13 +11,13 @@ metadata:
 spec:
   ingressClassName: nginx
   rules:
-    - host: "<YOUR_ALB_HOSTNAME>"
-      http:
-        paths:
-          - path: /
-            pathType: Prefix
-            backend:
-              service:
-                name: pharma-ui
-                port:
-                  number: 80
+  - host: "ac9e628161cdf498cb378ef3081ecbb1-e6b42448d6f67c75.elb.ap-south-1.amazonaws.com"
+    http:
+      paths:
+      - path: /
+        pathType: Prefix
+        backend:
+          service:
+            name: pharma-ui
+            port:
+              number: 80
