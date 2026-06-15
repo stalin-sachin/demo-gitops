@@ -7,12 +7,12 @@ metadata:
     env: qa
     managed-by: terraform
   finalizers:
-    - resources-finalizer.argocd.argoproj.io
+  - resources-finalizer.argocd.argoproj.io
 spec:
   project: pharma
 
   source:
-    repoURL: https://github.com/<YOUR_GITHUB_USERNAME>/pharmops-gitops.git
+    repoURL: https://github.com/stalin-sachin/demo-gitops.git
     targetRevision: HEAD
     path: envs/qa
 
@@ -26,9 +26,9 @@ spec:
       selfHeal: true
       allowEmpty: false
     syncOptions:
-      - CreateNamespace=true
-      - PrunePropagationPolicy=foreground
-      - PruneLast=true
+    - CreateNamespace=true
+    - PrunePropagationPolicy=foreground
+    - PruneLast=true
     retry:
       limit: 5
       backoff:
